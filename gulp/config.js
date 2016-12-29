@@ -4,6 +4,7 @@ module.exports = {
   // script paths
   scriptsCompiled: './.tmp/scripts/main.js',
   scriptsCompiledDir: './.tmp/scripts/',
+  scriptsSrcName: 'main.js',
   scriptsSrc: './src/scripts/main.js',
   scriptsSrcDir: './src/scripts/',
   stylesCompiled: './.tmp/styles/main.css',

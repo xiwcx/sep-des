@@ -5,7 +5,7 @@ const config = require('../config');
 const gulp = require('gulp');
 
 // Static server
-gulp.task('serve', ['styles'], function() {
+gulp.task('serve', ['clean', 'scripts', 'styles'], function() {
   bs.init({
     open: 'external',
     port: 3001,
@@ -19,7 +19,7 @@ gulp.task('serve', ['styles'], function() {
 
   // watch source files
   bs.watch(config.rootDir + 'index.html', bs.reload);
-  // gulp.watch(config.scriptsSrcDir + '**/*.{js,hbs}', ['scripts']);
+  gulp.watch(config.scriptsSrcDir + '**/*.js', ['scripts']);
   gulp.watch(config.stylesSrcDir + '**/*.scss', ['styles']);
 
   // watch compiled files
