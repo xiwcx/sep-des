@@ -1,0 +1,28 @@
+{
+  "name": "sep-des",
+  "version": "1.0.0",
+  "description": "## TODO",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.5",
+    "browserify": "^13.1.1",
+    "del": "^2.2.2",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "require-dir": "^0.3.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "clean": "gulp clean",
+    "scripts": "gulp scripts",
+    "serve": "gulp serve",
+    "styles": "gulp styles",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
