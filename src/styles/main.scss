@@ -1,5 +1,11 @@
-$color: red;
+@import 'utils/vars';
 
-div {
-  color: $color;
-}
+@import 'base';
+
+@import 'theme/colors';
+@import 'theme/typography';
+
+@import 'components/cover';
+@import 'components/cover-image';
+@import 'components/page';
+@import 'components/text';

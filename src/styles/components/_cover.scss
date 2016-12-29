@@ -1,0 +1,28 @@
+.cover__text {
+  @extend %font-display;
+
+  font-size: 1em;
+  line-height: $border-width-sm;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  width: 100vw;
+
+  @media #{$mq-md} {
+    line-height: $border-width-md;
+  }
+
+  @media #{$mq-lg} {
+    line-height: $border-width-lg;
+  }
+}
+
+.cover__text--title {
+  top: 0;
+}
+
+.cover__text--subtitle {
+  bottom: 0;
+}

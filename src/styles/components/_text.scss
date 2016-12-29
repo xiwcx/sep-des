@@ -1,0 +1,10 @@
+.text__container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.text__content {
+  text-align: center;
+  padding: $unit;
+}

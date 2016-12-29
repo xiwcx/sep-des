@@ -10,7 +10,18 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
     <!-- https://github.com/joshbuchea/HEAD -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'agy8lex',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
   </head>
   <body>
     <!--[if lte IE 9]>
@@ -18,26 +29,28 @@
     <![endif]-->
 
     <main>
-
-    </main>
-      <section>
-
-        <h1>We Are Separate / We Are Desperate</h1>
-        <h2>An Extended Play by Será</h2>
+      <div class="cover-image__container"></div>
+      <section class="page__container page__container--alternate">
+        <h1 class="cover__text cover__text--title">We Are Separate / We Are Desperate</h1>
+        <h2 class="cover__text cover__text--subtitle">An Extended Play by Será</h2>
       </section>
-      <section>
-        <h1>We Are Separate / We Are Desperate</h1>
-        <h2>An Extended Play by Será</h2>
-        <ol>
-          <li>Stare And Slow</li>
-          <li>For Rain</li>
-          <li>Pnuemo</li>
-          <li>Bloom / Grow</li>
-        </ol>
+
+      <section class="page__container bg-color--display text__container">
+        <div class="text__content">
+          <h1 class="h1">We Are Separate / We Are Desperate</h1>
+          <h2 class="h2">An Extended Play by Será</h2>
+          <ol>
+            <li>Stare And Slow</li>
+            <li>For Rain</li>
+            <li>Pnuemo</li>
+            <li>Bloom / Grow</li>
+          </ol>
+        </div>
       </section>
-      <section>
+
+      <section class="page__container bg-color--default">
         <div>
-          <h1>Stare And Slow</h1>
+          <h1 class="page__track-title">Stare And Slow</h1>
 
           <p>
             <span>I howl at the moon</span>
@@ -53,9 +66,10 @@
           </p>
         </div>
       </section>
-      <section>
+
+      <section class="page__container bg-color--default">
         <div>
-          <h1>Pnuemo</h1>
+          <h1 class="page__track-title">Pnuemo</h1>
 
           <p>
             <span>Throw up my arms</span>
@@ -75,9 +89,10 @@
           </p>
         </div>
       </section>
-      <section>
+
+      <section class="page__container bg-color--default">
         <div>
-          <h1>For Rain</h1>
+          <h1 class="page__track-title">For Rain</h1>
 
           <p>
             <span>Breathe deep and swear to me you won’t disappear too soon</span>
@@ -89,9 +104,10 @@
           </p>
         </div>
       </section>
-      <section>
+
+      <section class="page__container bg-color--default">
         <div>
-          <h1>Bloom / Grow</h1>
+          <h1 class="page__track-title">Bloom / Grow</h1>
 
           <p>
             <span>Love and fear are digging roots inside of me</span>
@@ -114,7 +130,8 @@
           </p>
         </div>
       </section>
-      <section>
+
+      <section class="page__container bg-color--default">
         <h1>Credits</h1>
 
         <ul>
@@ -132,9 +149,9 @@
           <li><a href="xiw.cx">Welch Canavan</a> &mdash; Guitar, Vocals, Designer, Art Director, Web Developer</li>
         </ul>
       </section>
-    <nav>
+    </main>
 
-    </nav>
+    <nav></nav>
 
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.1.min.js"><\/script>')</script>
     <script src="js/main.js"></script>

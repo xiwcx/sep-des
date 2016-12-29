@@ -1,0 +1,40 @@
+%font-default {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 400;
+}
+
+%font-default-em {
+  font-family: $font-default;
+  font-style: italic;
+  font-weight: 400;
+}
+
+%font-display {
+  font-family: $font-display;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+%font-alternate {
+  font-family: $font-alternate;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.h1 {
+  @extend %font-display;
+
+  font-size: 1.7em;
+  line-height: 1;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.h2 {
+  @extend %font-display;
+
+  font-size: 1em;
+  line-height: 1;
+}

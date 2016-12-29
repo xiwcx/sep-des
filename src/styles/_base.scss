@@ -1,0 +1,21 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @extend %font-default;
+
+  color: $color-text;
+  counter-reset: tracklist;
+  margin: 0;
+
+  em {
+    @extend %font-default-em;
+  }
+}
