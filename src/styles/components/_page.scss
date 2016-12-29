@@ -15,12 +15,5 @@
 }
 
 .page__container--alternate {
-  border-color: $color-text-inverse;
-}
-
-.page__track-title {
-  &::before {
-    counter-increment: tracklist;
-    content: counter(tracklist) ". ";
-  }
+  border-color: $color-background;
 }

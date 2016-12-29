@@ -5,7 +5,7 @@
 }
 
 %font-default-em {
-  font-family: $font-default;
+  font-family: $font-display;
   font-style: italic;
   font-weight: 400;
 }
@@ -37,4 +37,10 @@
 
   font-size: 1em;
   line-height: 1;
+}
+
+.body {
+  @extend %font-default-em;
+
+  text-transform: lowercase;
 }

@@ -19,3 +19,9 @@ body {
     @extend %font-default-em;
   }
 }
+
+a,
+a:link,
+a:hover {
+  color: $color-link;
+}

@@ -1,0 +1,28 @@
+.track-info__title {
+  @extend %font-default-em;
+
+  color: $color-text;
+  margin-bottom: $unit;
+  text-transform: lowercase;
+
+  &::before {
+    @extend %font-default;
+
+    color: tint($color-text, 15%);
+    counter-increment: tracklist;
+    content: counter(tracklist) ". ";
+    padding-right: $unit / 4;
+    font-size: $unit * .75;
+  }
+}
+
+.track-info__lyrics {
+  text-transform: lowercase;
+
+  span:not(:last-of-type) {
+    &::after {
+      content: ' //';
+      color: $color-text-inverse;
+    }
+  }
+}
