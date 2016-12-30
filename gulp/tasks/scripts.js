@@ -1,20 +1,37 @@
 'use strict';
 
-const config = require('../config');
 const gulp = require('gulp');
-const rollup = require('rollup-stream');
-const sourcemaps = require('gulp-sourcemaps');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
+const config = require('../config');
+const rollup = require('rollup').rollup;
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
+const replace = require('rollup-plugin-replace');
+const babel = require('rollup-plugin-babel');
 
 gulp.task('scripts', function() {
   return rollup({
     entry: config.scriptsSrc,
-    sourceMap: true
-  })
-  .pipe(source(config.scriptsSrcName, config.scriptsSrcDir))
-  .pipe(buffer())
-  .pipe(sourcemaps.init({loadMaps: true}))
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(config.scriptsCompiledDir));
+    plugins: [
+      babel({
+        exclude: 'node_modules/**',
+      }),
+      resolve({
+        jsnext: true,
+        main: true,
+        browser: true,
+      }),
+      commonjs({
+        include: 'node_modules/**',
+      }),
+      replace({
+        'process.env.NODE_ENV': JSON.stringify('development')
+      })
+    ],
+  }).then(function (bundle) {
+    return bundle.write({
+      format: 'iife',
+      sourceMap: true,
+      dest: config.scriptsCompiled,
+    });
+  });
 });

@@ -9,6 +9,7 @@ gulp.task('serve', ['clean', 'scripts', 'styles'], function() {
   bs.init({
     open: 'external',
     port: 3001,
+    xip: true,
     server: {
       baseDir: [
         config.rootDir,
@@ -19,6 +20,7 @@ gulp.task('serve', ['clean', 'scripts', 'styles'], function() {
 
   // watch source files
   bs.watch(config.rootDir + 'index.html', bs.reload);
+  bs.watch(config.scriptsCompiledDir, bs.reload);
   gulp.watch(config.scriptsSrcDir + '**/*.js', ['scripts']);
   gulp.watch(config.stylesSrcDir + '**/*.scss', ['styles']);
 
