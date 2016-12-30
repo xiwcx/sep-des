@@ -7,14 +7,12 @@ const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const replace = require('rollup-plugin-replace');
 const babel = require('rollup-plugin-babel');
+const eslint = require('rollup-plugin-eslint');
 
 gulp.task('scripts', function() {
   return rollup({
     entry: config.scriptsSrc,
     plugins: [
-      babel({
-        exclude: 'node_modules/**',
-      }),
       resolve({
         jsnext: true,
         main: true,
@@ -22,6 +20,14 @@ gulp.task('scripts', function() {
       }),
       commonjs({
         include: 'node_modules/**',
+      }),
+      eslint({
+        exclude: [
+          'src/styles/**',
+        ]
+      }),
+      babel({
+        exclude: 'node_modules/**',
       }),
       replace({
         'process.env.NODE_ENV': JSON.stringify('development')
