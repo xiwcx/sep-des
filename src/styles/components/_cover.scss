@@ -20,9 +20,25 @@
 }
 
 .cover__text--title {
-  top: 0;
+  top: -$border-width-sm;
+
+  @media #{$mq-md} {
+    top: -$border-width-md;
+  }
+
+  @media #{$mq-lg} {
+    top: -$border-width-lg;
+  }
 }
 
 .cover__text--subtitle {
-  bottom: $height-nav;
+  bottom: -$border-width-sm;
+
+  @media #{$mq-md} {
+    bottom: -$border-width-md;
+  }
+
+  @media #{$mq-lg} {
+    bottom: -$border-width-lg;
+  }
 }
