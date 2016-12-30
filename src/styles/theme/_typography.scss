@@ -1,16 +1,28 @@
+%all-fonts {
+  .wf-loading & {
+    visibility: hidden;
+  }
+}
+
 %font-default {
+  @extend %all-fonts;
+
   font-family: $font-default;
   font-style: normal;
   font-weight: 400;
 }
 
 %font-default-em {
+  @extend %all-fonts;
+
   font-family: $font-display;
   font-style: italic;
   font-weight: 400;
 }
 
 %font-display {
+  @extend %all-fonts;
+
   font-family: $font-display;
   font-style: normal;
   font-weight: 400;
