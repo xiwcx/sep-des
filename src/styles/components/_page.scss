@@ -3,6 +3,9 @@
   border-style: solid;
   border-width: $border-width-sm;
   height: calc(100vh - #{$height-nav});
+  position: fixed;
+  top: 100vh;
+  transition: top 1s ease-out;
   width: 100vw;
 
   @media #{$mq-md} {
@@ -12,6 +15,10 @@
   @media #{$mq-lg} {
     border-width: $border-width-lg;
   }
+}
+
+.page__container--active {
+  top: 0;
 }
 
 .page__container--alternate {

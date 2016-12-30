@@ -7,6 +7,7 @@
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-react": "^6.16.0",
     "browser-sync": "^2.18.5",
+    "classnames": "^2.2.5",
     "del": "^2.2.2",
     "eslint-plugin-react": "^6.8.0",
     "gulp": "^3.9.1",
