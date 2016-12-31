@@ -7,7 +7,7 @@ class SongInfo extends React.Component {
     this.state = {displayLyrics: true};
 
     this.toggleView = this.toggleView.bind(this);
-    this.update = this.update.bind(this);
+    this.updateSong = this.updateSong.bind(this);
   }
 
   toggleView() {
@@ -16,8 +16,8 @@ class SongInfo extends React.Component {
     });
   }
 
-  update() {
-    this.props.selectSong(this.props.songId);
+  updateSong() {
+    this.props.setSong(this.props.songId);
   }
 
   render() {
@@ -29,9 +29,15 @@ class SongInfo extends React.Component {
 
     return (
       <div className={songInfoClasses}>
+        <div className="song-info__panel song-info__panel--img">
+          <div className="song-info__content">
+            <img className="song-info__img" src={this.props.songImg} />
+          </div>
+        </div>
         <div className="song-info__panel song-info__panel--lyrics">
           <div className="song-info__content">
             <h1 className="song-info__title">Stare And Slow</h1>
+            <button onClick={this.updateSong}>Set Song</button>
 
             <p className="song-info__lyrics">
               {this.props.songLyrics.map((lyric, i) => (
@@ -40,12 +46,7 @@ class SongInfo extends React.Component {
             </p>
           </div>
         </div>
-        <div className="song-info__panel song-info__panel--img">
-          <div className="song-info__content">
-            <img className="song-info__img" src={this.props.songImg} />
-          </div>
-        </div>
-        <button className="song-info__toggle-button"  onClick={this.toggleView}>
+        <button className="song-info__toggle-button" onClick={this.toggleView}>
           <span>Toggle</span>
         </button>
       </div>
@@ -54,6 +55,7 @@ class SongInfo extends React.Component {
 }
 
 SongInfo.propTypes = {
+  setSong: React.PropTypes.func.isRequired,
   songId: React.PropTypes.number.isRequired,
   songImg: React.PropTypes.string.isRequired,
   songLyrics: React.PropTypes.array.isRequired,

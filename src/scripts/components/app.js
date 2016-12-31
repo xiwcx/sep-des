@@ -14,8 +14,11 @@ class App extends React.Component {
     };
 
     this.nextPage = this.nextPage.bind(this);
+    this.nextSong = this.nextSong.bind(this);
     this.onEnd = this.onEnd.bind(this);
     this.prevPage = this.prevPage.bind(this);
+    this.prevSong = this.prevSong.bind(this);
+    this.setSong = this.setSong.bind(this);
     this.toggleAudio = this.toggleAudio.bind(this);
   }
 
@@ -23,6 +26,14 @@ class App extends React.Component {
     if(this.state.currentPage > 0 && this.state.currentPage < 7) {
       this.setState((prevState) => {
         return {currentPage: prevState.currentPage + 1};
+      });
+    }
+  }
+
+  nextSong() {
+    if(this.state.currentSong >= 0 && this.state.currentSong < 3) {
+      this.setState((prevState) => {
+        return {currentSong: prevState.currentSong + 1};
       });
     }
   }
@@ -46,6 +57,21 @@ class App extends React.Component {
         return {currentPage: prevState.currentPage - 1};
       });
     }
+  }
+
+  prevSong() {
+    if(this.state.currentSong > 0 && this.state.currentSong < 4) {
+      this.setState((prevState) => {
+        return {currentSong: prevState.currentSong - 1};
+      });
+    }
+  }
+
+  setSong(song) {
+    this.setState({
+      currentSong: song,
+      playing: true,
+    });
   }
 
   toggleAudio() {
@@ -92,6 +118,7 @@ class App extends React.Component {
               pageId={i + 3}
             >
               <SongInfo
+                setSong={this.setSong}
                 songId={datum.songId}
                 songImg={datum.songImg}
                 songLyrics={datum.songLyrics}
@@ -148,15 +175,22 @@ class App extends React.Component {
         </main>
 
         <nav className="nav__container">
-          <button onClick={this.prevPage}>Previous</button>
-          <button onClick={this.nextPage}>Next</button>
-          <button onClick={this.toggleAudio}>Toggle Audio</button>
-          <ReactHowler
-            playing={this.state.playing}
-            src={data[this.state.currentSong].songAudio}
-            onEnd={this.onEnd}
-          />
+          <div>
+            <button onClick={this.prevPage}>Previous Page</button>
+            <button onClick={this.nextPage}>Next Page</button>
+          </div>
+          <div>
+            <button onClick={this.prevSong}>Previous Song</button>
+            <button onClick={this.toggleAudio}>Toggle Audio</button>
+            <button onClick={this.nextSong}>Next Song</button>
+          </div>
         </nav>
+
+        <ReactHowler
+          playing={this.state.playing}
+          src={data[this.state.currentSong].songAudio}
+          onEnd={this.onEnd}
+        />
       </div>
     );
   }
