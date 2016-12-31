@@ -1,5 +1,7 @@
 import React from 'react';
 import Page from './page';
+import SongInfo from './songInfo';
+import data from '../data';
 
 class App extends React.Component {
   constructor(props) {
@@ -63,103 +65,48 @@ class App extends React.Component {
             currentPage={this.state.currentPage}
             pageId={3}
           >
-            <div className="text__container">
-              <div className="text__content">
-                <h1 className="track-info__title">Stare And Slow</h1>
-
-                <p className="track-info__lyrics">
-                  <span>I howl at the moon</span>
-                  <span>It never calls back to me</span>
-                  <span>Just stares and slows</span>
-                  <span>I’d rip it down If I could</span>
-                  <span>Tell me you can hear me</span>
-                  <span>Tell me you’ll be back tomorrow</span>
-                  <span>Don’t let me see a different side of you</span>
-                  <span>Until I say I’m ready</span>
-                  <span>Keep your distance</span>
-                  <span>But don’t go too far</span>
-                </p>
-              </div>
-            </div>
+            <SongInfo
+              currentPage={this.state.currentPage}
+              songId={data[0].songId}
+              songLyrics={data[0].songLyrics}
+              songTitle={data[0].songTitle}
+            />
           </Page>
 
           <Page
             currentPage={this.state.currentPage}
             pageId={4}
           >
-            <div className="text__container">
-              <div className="text__content">
-                <h1 className="track-info__title">Pneumo</h1>
-
-                <p className="track-info__lyrics">
-                  <span>Throw up my arms</span>
-                  <span>Scream for rain</span>
-                  <span>For anything</span>
-                  <span>For a chance to keep the dust at bay</span>
-                  <span>I won’t breathe copper, dirt of centuries</span>
-                  <span>Cough it out before it weighs me down</span>
-                  <span>Carve the past</span>
-                  <span>In trees that drown in the floods</span>
-                  <span>Claw at the banks</span>
-                  <span>Churn the mud and debris</span>
-                  <span>Stand at the edge</span>
-                  <span>Wait to cross</span>
-                  <span>Stare at the edge</span>
-                  <span>At the loss</span>
-                </p>
-              </div>
-            </div>
+            <SongInfo
+              currentPage={this.state.currentPage}
+              songId={data[1].songId}
+              songLyrics={data[1].songLyrics}
+              songTitle={data[1].songTitle}
+            />
           </Page>
 
           <Page
             currentPage={this.state.currentPage}
             pageId={5}
           >
-            <div className="text__container">
-              <div className="text__content">
-                <h1 className="track-info__title">For Rain</h1>
-
-                <p className="track-info__lyrics">
-                  <span>Breathe deep and swear to me you won’t disappear too soon</span>
-                  <span>Blow the mist from your lungs</span>
-                  <span>Cough out the fog</span>
-                  <span>You are more than the storm inside your chest</span>
-                  <span>Lay still like the pause between lightning and thunder</span>
-                  <span>Come back to us with a voice you never had</span>
-                </p>
-              </div>
-            </div>
+            <SongInfo
+              currentPage={this.state.currentPage}
+              songId={data[2].songId}
+              songLyrics={data[2].songLyrics}
+              songTitle={data[2].songTitle}
+            />
           </Page>
 
           <Page
             currentPage={this.state.currentPage}
             pageId={6}
           >
-            <div className="text__container">
-              <div className="text__content">
-                <h1 className="track-info__title">Bloom / Grow</h1>
-
-                <p className="track-info__lyrics">
-                  <span>Love and fear are digging roots inside of me</span>
-                  <span>It’s not a home when it’s overgrown</span>
-                  <span>I don’t know what parts are my own</span>
-                  <span>I bloom and grow</span>
-                  <span>All I wanted was to be alone</span>
-                  <span>Now I’m breaking through the floorboards</span>
-                  <span>I scale the walls</span>
-                  <span>All I wanted was to be alone</span>
-                  <span>Shatter the windows and lock the door</span>
-                  <span>I don’t know what parts are my own</span>
-                  <span>It’s not a home when it’s overgrown</span>
-                  <span>All I wanted was to be alone</span>
-                  <span>All I wanted was to be alone</span>
-                  <span>Stay underground</span>
-                  <span>Wait out the cold</span>
-                  <span>I never knew what I’d sown</span>
-                  <span>It’s not a home when it’s overgrown</span>
-                </p>
-              </div>
-            </div>
+            <SongInfo
+              currentPage={this.state.currentPage}
+              songId={data[3].songId}
+              songLyrics={data[3].songLyrics}
+              songTitle={data[3].songTitle}
+            />
           </Page>
 
           <Page

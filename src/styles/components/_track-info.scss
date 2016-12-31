@@ -21,7 +21,7 @@
 
   span:not(:last-of-type) {
     &::after {
-      content: ' //';
+      content: ' // ';
       color: $color-text-inverse;
     }
   }
