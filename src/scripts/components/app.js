@@ -6,7 +6,7 @@ import data from '../data';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {currentPage: 1};
+    this.state = {currentPage: 3};
 
     this.nextPage = this.nextPage.bind(this);
     this.prevPage = this.prevPage.bind(this);
@@ -61,53 +61,20 @@ class App extends React.Component {
             </div>
           </Page>
 
-          <Page
-            currentPage={this.state.currentPage}
-            pageId={3}
-          >
-            <SongInfo
+          {data.map((datum, i) => (
+            <Page
               currentPage={this.state.currentPage}
-              songId={data[0].songId}
-              songLyrics={data[0].songLyrics}
-              songTitle={data[0].songTitle}
-            />
-          </Page>
-
-          <Page
-            currentPage={this.state.currentPage}
-            pageId={4}
-          >
-            <SongInfo
-              currentPage={this.state.currentPage}
-              songId={data[1].songId}
-              songLyrics={data[1].songLyrics}
-              songTitle={data[1].songTitle}
-            />
-          </Page>
-
-          <Page
-            currentPage={this.state.currentPage}
-            pageId={5}
-          >
-            <SongInfo
-              currentPage={this.state.currentPage}
-              songId={data[2].songId}
-              songLyrics={data[2].songLyrics}
-              songTitle={data[2].songTitle}
-            />
-          </Page>
-
-          <Page
-            currentPage={this.state.currentPage}
-            pageId={6}
-          >
-            <SongInfo
-              currentPage={this.state.currentPage}
-              songId={data[3].songId}
-              songLyrics={data[3].songLyrics}
-              songTitle={data[3].songTitle}
-            />
-          </Page>
+              key={i}
+              pageId={i + 3}
+            >
+              <SongInfo
+                songId={datum.songId}
+                songImg={datum.songImg}
+                songLyrics={datum.songLyrics}
+                songTitle={datum.songTitle}
+              />
+            </Page>
+          ))}
 
           <Page
             currentPage={this.state.currentPage}

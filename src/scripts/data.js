@@ -1,6 +1,7 @@
 export default [
   {
     'songId': 1,
+    'songImg': 'assets/1.png',
     'songLyrics': [
       'I howl at the moon',
       'It never calls back to me',
@@ -17,6 +18,7 @@ export default [
   },
   {
     'songId': 2,
+    'songImg': 'assets/2.png',
     'songLyrics': [
       'Throw up my arms',
       'Scream for rain',
@@ -37,6 +39,7 @@ export default [
   },
   {
     'songId': 3,
+    'songImg': 'assets/3.png',
     'songLyrics': [
       'Breathe deep and swear to me you won’t disappear too soon',
       'Blow the mist from your lungs',
@@ -49,6 +52,7 @@ export default [
   },
   {
     'songId': 4,
+    'songImg': 'assets/4.png',
     'songLyrics': [
       'Love and fear are digging roots inside of me',
       'It’s not a home when it’s overgrown',
