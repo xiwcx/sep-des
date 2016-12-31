@@ -7,12 +7,17 @@ class SongInfo extends React.Component {
     this.state = {displayLyrics: true};
 
     this.toggleView = this.toggleView.bind(this);
+    this.update = this.update.bind(this);
   }
 
   toggleView() {
     this.setState((prevState) => {
       return {displayLyrics: !prevState.displayLyrics};
     });
+  }
+
+  update() {
+    this.props.selectSong(this.props.songId);
   }
 
   render() {

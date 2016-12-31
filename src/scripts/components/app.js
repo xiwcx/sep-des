@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentPage: 1,
-      currentSong: 3,
+      currentSong: 0,
       playing: false,
     };
 

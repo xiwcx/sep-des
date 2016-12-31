@@ -1,7 +1,7 @@
 export default [
   {
     'songAudio': '/assets/audio/01-STARE_AND_SLOW.mp3',
-    'songId': 1,
+    'songId': 0,
     'songImg': 'assets/1.png',
     'songLyrics': [
       'I howl at the moon',
@@ -19,7 +19,7 @@ export default [
   },
   {
     'songAudio': '/assets/audio/02-FOR_RAIN.mp3',
-    'songId': 2,
+    'songId': 1,
     'songImg': 'assets/2.png',
     'songLyrics': [
       'Throw up my arms',
@@ -41,7 +41,7 @@ export default [
   },
   {
     'songAudio': '/assets/audio/03-PNUEMO.mp3',
-    'songId': 3,
+    'songId': 2,
     'songImg': 'assets/3.png',
     'songLyrics': [
       'Breathe deep and swear to me you won’t disappear too soon',
@@ -55,7 +55,7 @@ export default [
   },
   {
     'songAudio': '/assets/audio/04-BLOOM_GROW.mp3',
-    'songId': 4,
+    'songId': 3,
     'songImg': 'assets/4.png',
     'songLyrics': [
       'Love and fear are digging roots inside of me',
