@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactHowler from 'react-howler';
 import Page from './page';
 import SongInfo from './songInfo';
 import data from '../data';
@@ -6,10 +7,16 @@ import data from '../data';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {currentPage: 3};
+    this.state = {
+      currentPage: 1,
+      currentSong: 3,
+      playing: false,
+    };
 
     this.nextPage = this.nextPage.bind(this);
+    this.onEnd = this.onEnd.bind(this);
     this.prevPage = this.prevPage.bind(this);
+    this.toggleAudio = this.toggleAudio.bind(this);
   }
 
   nextPage() {
@@ -20,12 +27,29 @@ class App extends React.Component {
     }
   }
 
+  onEnd() {
+    if(this.state.currentSong < 3) {
+      this.setState((prevState) => {
+        return {currentSong: prevState.currentSong + 1};
+      });
+    }
+
+    return this.setState({
+      currentSong: 0,
+      playing: false,
+    });
+  }
+
   prevPage() {
     if(this.state.currentPage > 1 && this.state.currentPage < 8) {
       this.setState((prevState) => {
         return {currentPage: prevState.currentPage - 1};
       });
     }
+  }
+
+  toggleAudio() {
+    this.setState({playing: !this.state.playing});
   }
 
   render() {
@@ -126,6 +150,12 @@ class App extends React.Component {
         <nav className="nav__container">
           <button onClick={this.prevPage}>Previous</button>
           <button onClick={this.nextPage}>Next</button>
+          <button onClick={this.toggleAudio}>Toggle Audio</button>
+          <ReactHowler
+            playing={this.state.playing}
+            src={data[this.state.currentSong].songAudio}
+            onEnd={this.onEnd}
+          />
         </nav>
       </div>
     );

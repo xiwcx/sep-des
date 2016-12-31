@@ -1,5 +1,6 @@
 export default [
   {
+    'songAudio': '/assets/audio/01-STARE_AND_SLOW.mp3',
     'songId': 1,
     'songImg': 'assets/1.png',
     'songLyrics': [
@@ -17,6 +18,7 @@ export default [
     'songTitle': 'Stare And Slow',
   },
   {
+    'songAudio': '/assets/audio/02-FOR_RAIN.mp3',
     'songId': 2,
     'songImg': 'assets/2.png',
     'songLyrics': [
@@ -38,6 +40,7 @@ export default [
     'songTitle': 'Pneumo',
   },
   {
+    'songAudio': '/assets/audio/03-PNUEMO.mp3',
     'songId': 3,
     'songImg': 'assets/3.png',
     'songLyrics': [
@@ -51,6 +54,7 @@ export default [
     'songTitle': 'For Rain',
   },
   {
+    'songAudio': '/assets/audio/04-BLOOM_GROW.mp3',
     'songId': 4,
     'songImg': 'assets/4.png',
     'songLyrics': [
