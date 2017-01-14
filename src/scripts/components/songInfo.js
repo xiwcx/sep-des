@@ -36,8 +36,11 @@ class SongInfo extends React.Component {
         </div>
         <div className="song-info__panel song-info__panel--lyrics">
           <div className="song-info__content">
-            <h1 className="song-info__title">Stare And Slow</h1>
-            <button onClick={this.updateSong}>Set Song</button>
+            <h1 className="song-info__title">{this.props.songTitle}</h1>
+            <button onClick={this.updateSong} className="song-info__play-button">
+              <span className="visuallyhidden">Set Song</span>
+              &#9654;
+            </button>
 
             <p className="song-info__lyrics">
               {this.props.songLyrics.map((lyric, i) => (

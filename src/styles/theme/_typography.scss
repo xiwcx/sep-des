@@ -7,7 +7,7 @@
 %font-default {
   @extend %all-fonts;
 
-  font-family: $font-default;
+  font-family: $font-display;
   font-style: normal;
   font-weight: 400;
 }
@@ -20,35 +20,22 @@
   font-weight: 400;
 }
 
-%font-display {
-  @extend %all-fonts;
-
-  font-family: $font-display;
-  font-style: normal;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-%font-alternate {
-  font-family: $font-alternate;
-  font-style: normal;
-  font-weight: 300;
-}
-
 .h1 {
-  @extend %font-display;
+  @extend %font-default;
 
   font-size: 1.7em;
   line-height: 1;
   margin-bottom: 0;
   margin-top: 0;
+  text-transform: uppercase;
 }
 
 .h2 {
-  @extend %font-display;
+  @extend %font-default;
 
   font-size: 1em;
   line-height: 1;
+  text-transform: uppercase;
 }
 
 .body {

@@ -70,3 +70,12 @@
   position: absolute;
   bottom: 2vw;
 }
+
+.song-info__play-button {
+  background: $color-primary;
+  border: none;
+  border-radius: 50%;
+  color: $color-background;
+  height: $unit *3;
+  width: $unit *3;
+}

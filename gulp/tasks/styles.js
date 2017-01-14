@@ -10,7 +10,7 @@ const sourcemaps = require('gulp-sourcemaps');
 gulp.task('styles', function() {
   return gulp.src(config.stylesSrc)
     .pipe(sourcemaps.init())
-      .pipe(sass({errLogToConsole: true}))
+      .pipe(sass().on('error', sass.logError))
       .pipe(autoprefixer())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.stylesCompiledDir))
