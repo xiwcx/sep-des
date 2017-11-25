@@ -1,5 +1,6 @@
-import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 class MapItem extends React.Component {
   render() {
@@ -21,8 +22,8 @@ class MapItem extends React.Component {
 }
 
 MapItem.propTypes = {
-  currentPage: React.PropTypes.number.isRequired,
-  pageId: React.PropTypes.number.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  pageId: PropTypes.number.isRequired,
 };
 
 export default MapItem;

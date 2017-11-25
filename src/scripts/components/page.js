@@ -1,5 +1,6 @@
-import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 class Page extends React.Component {
   render() {
@@ -25,21 +26,21 @@ Page.defaultProps = {
 };
 
 Page.propTypes = {
-  backgroundType: React.PropTypes.oneOf([
+  backgroundType: PropTypes.oneOf([
     'display',
     'default',
     'none',
   ]).isRequired,
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.array,
-    React.PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.element,
   ]).isRequired,
-  containerType: React.PropTypes.oneOf([
+  containerType: PropTypes.oneOf([
     'default',
     'alternate',
   ]).isRequired,
-  currentPage: React.PropTypes.number.isRequired,
-  pageId: React.PropTypes.number.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  pageId: PropTypes.number.isRequired,
 };
 
 export default Page;

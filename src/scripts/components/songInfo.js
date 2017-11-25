@@ -1,5 +1,6 @@
-import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 class SongInfo extends React.Component {
   constructor(props) {
@@ -96,11 +97,11 @@ class SongInfo extends React.Component {
 }
 
 SongInfo.propTypes = {
-  setSong: React.PropTypes.func.isRequired,
-  songId: React.PropTypes.number.isRequired,
-  songImg: React.PropTypes.string.isRequired,
-  songLyrics: React.PropTypes.array.isRequired,
-  songTitle: React.PropTypes.string.isRequired,
+  setSong: PropTypes.func.isRequired,
+  songId: PropTypes.number.isRequired,
+  songImg: PropTypes.string.isRequired,
+  songLyrics: PropTypes.array.isRequired,
+  songTitle: PropTypes.string.isRequired,
 };
 
 export default SongInfo;
