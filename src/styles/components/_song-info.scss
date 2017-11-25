@@ -69,6 +69,14 @@
 .song-info__toggle-button {
   position: absolute;
   bottom: 2vw;
+  width: 100%;
+  //thing
+}
+
+.song-info__button-icon {
+  height: 27px;
+  fill: $color-primary;
+  width: auto;
 }
 
 .song-info__play-button {
