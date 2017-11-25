@@ -1,7 +1,37 @@
+$nav-unit: 54px;
+
+.nav__button {
+  background-color: transparent;
+  border: none;
+
+  &--audio {
+    width: $nav-unit;
+  }
+
+  &--page {
+    flex-grow: 1;
+  }
+
+  &--page-next {
+    text-align: right;
+  }
+
+  &--page-prev {
+    text-align: left;
+  }
+}
+
+.nav__button-icon {
+  fill: $color-primary;
+  height: $nav-unit;
+  width: auto;
+}
+
 .nav__container {
   background-color: $color-background;
   box-shadow: $box-shadow-default;
   bottom: 0;
+  display: flex;
   height: $height-nav;
   left: 0;
   position: fixed;

@@ -4,21 +4,25 @@
   border-width: $border-width-sm;
   height: calc(100vh - #{$height-nav});
   position: fixed;
-  top: 100vh;
-  transition: top 1s ease-out;
+  left: 100vw;
+  transition-duration: .5s;
+  transition-property: left;
+  transition-timing-function: ease-out;
   width: 100vw;
 
   @media #{$mq-md} {
     border-width: $border-width-md;
+    transition-duration: .75s;
   }
 
   @media #{$mq-lg} {
     border-width: $border-width-lg;
+    transition-duration: 1s;
   }
 }
 
 .page__container--active {
-  top: 0;
+  left: 0;
 }
 
 .page__container--alternate {
