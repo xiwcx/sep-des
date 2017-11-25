@@ -1,8 +1,12 @@
+import Credits from './credits';
 import React from 'react';
 import ReactHowler from 'react-howler';
+import MapItem from './mapItem';
 import Page from './page';
 import SongInfo from './songInfo';
 import data from '../data';
+
+const pages = [1, 2, 3, 4, 5, 6, 7];
 
 class App extends React.Component {
   constructor(props) {
@@ -155,86 +159,63 @@ class App extends React.Component {
             currentPage={this.state.currentPage}
             pageId={7}
           >
-            <div className="text__container">
-              <div className="text__content">
-                <h1 className="h1">Credits</h1>
-
-                <ul className="ul__container">
-                  <li className="ul__item">
-                    <a href="https://www.instagram.com/humanleather/">Ana Humanleather</a> &mdash; Illustrator (Stare and Slow)
-                  </li>
-                  <li className="ul__item">
-                    <a href="http://andrew-kenney.com/">Andrew Kenney</a> &mdash; Photo Retoucher
-                  </li>
-                  <li className="ul__item">Daniel López &mdash; Drums
-                  </li>
-                  <li className="ul__item">
-                    <a href="https://www.instagram.com/dj_dohar/">DJ Dohar</a> &mdash; Digitech
-                  </li>
-                  <li className="ul__item">Henry Mesias &mdash; Bass
-                  </li>
-                  <li className="ul__item">
-                    <a href="http://ianloringshiver.com/">Ian Shiver</a> &mdash; Photography
-                  </li>
-                  <li className="ul__item">Joshua Stark &mdash; Vocals
-                  </li>
-                  <li className="ul__item">Kris Hilbert &mdash; Production, Mixing at <a href="http://www.lgtbiz.com/">Legitimate Business</a>
-                  </li>
-                  <li className="ul__item">
-                    <a href="http://www.mattiehinkley.com/">Mattie Hinkley</a> &mdash; Illustrator (For Rain)
-                  </li>
-                  <li className="ul__item">
-                    <a href="http://www.ketchwehrart.com/">Ketch Wehr</a> &mdash; Illustrator (Bloom / Grow)
-                  </li>
-                  <li className="ul__item">
-                    <a href="http://www.valdemargtz.tumblr.com/">Val Gutiérrez</a> &mdash; Illustrator (Pnuemo)
-                  </li>
-                  <li className="ul__item">
-                    <a href="xiw.cx">Welch Canavan</a> &mdash; Guitar, Vocals, Designer, Art Director, Web Developer
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <Credits />
           </Page>
         </main>
 
-        <nav className="nav__container">
-          <button className='nav__button nav__button--page nav__button--page-prev' onClick={this.prevPage}>
-            <span className="visuallyhidden">
-              Previous Page
-            </span>
+        <div className="nav__container">
+          <ol className="map">
+            {pages.map((page, i) => (
+              <MapItem
+                currentPage={this.state.currentPage}
+                key={i}
+                pageId={page}
+              />
+            ))}
+          </ol>
 
-            <svg className="nav__button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 72"><polygon points="36 64.93 7.07 36 36 7.07 36 0 0 36 36 72 36 64.93"/></svg>
-          </button>
+          <div>
+            playing: {data[this.state.currentSong].songTitle}
+          </div>
 
-          <button className='nav__button nav__button--audio' onClick={this.prevSong}>
-            <span className="visuallyhidden">
-              Previous Song
-            </span>
+          <nav className="nav__button-container">
+            <button className='nav__button nav__button--page nav__button--page-prev' onClick={this.prevPage}>
+              <span className="visuallyhidden">
+                Previous Page
+              </span>
 
-            <svg className="nav__button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 72"><g><path d="M5,36,41,72V0ZM36,59.93,12.07,36,36,12.07Z"/><polygon points="0 0 0 72 5 72 5 36 5 0 0 0"/></g></svg>
-          </button>
+              <svg className="nav__button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 72"><polygon points="36 64.93 7.07 36 36 7.07 36 0 0 36 36 72 36 64.93"/></svg>
+            </button>
 
-          {this.state.playing ?
-            this.renderPause()
-            : this.renderPlay()}
+            <button className='nav__button nav__button--audio' onClick={this.prevSong}>
+              <span className="visuallyhidden">
+                Previous Song
+              </span>
 
-          <button className='nav__button nav__button--audio' onClick={this.nextSong}>
-            <span className="visuallyhidden">
-              Next Song
-            </span>
+              <svg className="nav__button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 72"><g><path d="M5,36,41,72V0ZM36,59.93,12.07,36,36,12.07Z"/><polygon points="0 0 0 72 5 72 5 36 5 0 0 0"/></g></svg>
+            </button>
 
-            <svg className="nav__button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 72"><path d="M0,72,36,36,0,0ZM5,12.07,28.93,36,5,59.93Z"/><polygon points="36 0 36 36 36 72 41 72 41 0 36 0"/></svg>
-          </button>
+            {this.state.playing ?
+              this.renderPause()
+              : this.renderPlay()}
 
-          <button className='nav__button nav__button--page nav__button--page-next' onClick={this.nextPage}>
-            <span className="visuallyhidden">
-              Next Page
-            </span>
+            <button className='nav__button nav__button--audio' onClick={this.nextSong}>
+              <span className="visuallyhidden">
+                Next Song
+              </span>
 
-            <svg className="nav__button-icon nav__button--page" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 72"><polygon points="0 64.93 28.93 36 0 7.07 0 0 36 36 0 72 0 64.93"/></svg>
-          </button>
-        </nav>
+              <svg className="nav__button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 72"><path d="M0,72,36,36,0,0ZM5,12.07,28.93,36,5,59.93Z"/><polygon points="36 0 36 36 36 72 41 72 41 0 36 0"/></svg>
+            </button>
+
+            <button className='nav__button nav__button--page nav__button--page-next' onClick={this.nextPage}>
+              <span className="visuallyhidden">
+                Next Page
+              </span>
+
+              <svg className="nav__button-icon nav__button--page" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 72"><polygon points="0 64.93 28.93 36 0 7.07 0 0 36 36 0 72 0 64.93"/></svg>
+            </button>
+          </nav>
+        </div>
 
         <ReactHowler
           playing={this.state.playing}

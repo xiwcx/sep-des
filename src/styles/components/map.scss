@@ -1,0 +1,21 @@
+.map {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.map__item {
+  display: block;
+  padding: 0 1px;
+  flex-grow: 1;
+}
+
+.map__indicator {
+  height: 4px;
+  background-color: $color-text-inverse;
+
+  &--active {
+    background-color: $color-text;
+  }
+}

@@ -21,6 +21,10 @@ $nav-unit: 54px;
   }
 }
 
+.nav__button-container {
+  display: flex;
+}
+
 .nav__button-icon {
   fill: $color-primary;
   height: $nav-unit;
@@ -31,7 +35,6 @@ $nav-unit: 54px;
   background-color: $color-background;
   box-shadow: $box-shadow-default;
   bottom: 0;
-  display: flex;
   height: $height-nav;
   left: 0;
   position: fixed;
