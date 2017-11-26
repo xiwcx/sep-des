@@ -1,6 +1,6 @@
 import Credits from './credits';
 import React from 'react';
-import ReactHowler from 'react-howler';
+import ReactPlayer from 'react-player';
 import MapItem from './mapItem';
 import Page from './page';
 import SongInfo from './songInfo';
@@ -19,7 +19,7 @@ class App extends React.Component {
 
     this.nextPage = this.nextPage.bind(this);
     this.nextSong = this.nextSong.bind(this);
-    this.onEnd = this.onEnd.bind(this);
+    this.onEnded = this.onEnded.bind(this);
     this.prevPage = this.prevPage.bind(this);
     this.prevSong = this.prevSong.bind(this);
     this.setSong = this.setSong.bind(this);
@@ -42,10 +42,13 @@ class App extends React.Component {
     }
   }
 
-  onEnd() {
+  onEnded() {
     if(this.state.currentSong < 3) {
-      this.setState((prevState) => {
-        return {currentSong: prevState.currentSong + 1};
+      return this.setState((prevState) => {
+        return {
+          currentSong: prevState.currentSong + 1,
+          playing: true,
+        };
       });
     }
 
@@ -217,10 +220,12 @@ class App extends React.Component {
           </nav>
         </div>
 
-        <ReactHowler
+        <ReactPlayer
+          height='0'
+          onEnded={this.onEnded}
           playing={this.state.playing}
-          src={data[this.state.currentSong].songAudio}
-          onEnd={this.onEnd}
+          url={data[this.state.currentSong].songAudio}
+          width='0'
         />
       </div>
     );
